@@ -21,4 +21,16 @@ input {
 button {
   padding: 8px 12px;
   cursor: pointer;
+  justify-content: space-around;
+}
+
+/* Me class */
+.gallery {
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+}
+
+.gallery__item {
+  flex-basis: calc(100% - 20px) / 2;
 }
