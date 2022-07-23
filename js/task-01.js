@@ -26,5 +26,7 @@ const listItemEl = document.querySelectorAll('li.item');
 
 listItemEl.forEach(elem => {
   console.log(`Category: ${elem.firstElementChild.textContent}`);
-  console.log(`Elements: ${elem.children[1].childElementCount}`);
+  console.log(`Elements: ${elem.lastElementChild.childElementCount}`);
 });
+
+
