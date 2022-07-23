@@ -1,4 +1,4 @@
-//TODO
+//TODO ✅
 /*
 Напиши скрипт, який під час втрати фокусу на input (подія blur), перевіряє його вміст щодо правильної кількості введених символів.
 
@@ -26,3 +26,19 @@
 }
 
 */
+
+
+const textInputEl = document.querySelector("#validation-input");
+
+textInputEl.addEventListener("blur", onTextInputCheck);
+
+function onTextInputCheck(event) {
+  textInputEl.classList = ""
+  if (event.currentTarget.value.length !== Number(textInputEl.dataset.length)) {
+    textInputEl.classList.add("invalid")
+    return;
+  }
+  textInputEl.classList.add("valid")
+}
+
+

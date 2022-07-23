@@ -1,4 +1,4 @@
-//TODO
+//TODO ✅
 /*
 Напиши скрипт, який під час набору тексту в input input#name-input (подія input), підставляє його поточне значення в span#name-output. Якщо input порожній, у span повинен відображатися рядок "Anonymous".
 
