@@ -31,11 +31,22 @@ const ingredients = [
 
 const listEl = document.querySelector('#ingredients');
 
-const listMarkup = ingredients.map(elem => {
-  const listItem = document.createElement('li');
-  listItem.classList.add('item');
-  listItem.textContent = elem;
-  return listItem;
-});
+
+function itemMarkup(value) {
+  const itemMarkup = document.createElement('li');
+  itemMarkup.classList.add('item');
+  itemMarkup.textContent = value;
+  return itemMarkup;
+}
+
+const listMarkup = ingredients.map(itemMarkup);
 
 listEl.append(...listMarkup);
+
+
+// const listMarkup = ingredients.map(elem => {
+//   const listItem = document.createElement('li');
+//   listItem.classList.add('item');
+//   listItem.textContent = elem;
+//   return listItem;
+// });

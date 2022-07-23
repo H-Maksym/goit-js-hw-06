@@ -28,13 +28,15 @@ const images = [
 ];
 
 const listGalleryEl = document.querySelector('.gallery');
-listGalleryEl.style.display = 'flex'; //погана практика! 😊
+listGalleryEl.style.display = 'flex'; //погана практика! 😊 тому додав в сss.
+
+function addItemMarkup({ url, alt }) {
+  const itemMarkup = `<li class="gallery__item"><img  src="${url}" alt="${alt}" width=500></li>`
+  return itemMarkup;
+}
 
 const imagesMarkup = images
-  .map(
-    ({ url, alt }) =>
-      `<li class="gallery__item"><img  src="${url}" alt="${alt}" width=500></li>`
-  )
+  .map(addItemMarkup)
   .join('');
 
 listGalleryEl.insertAdjacentHTML('beforeend', imagesMarkup);

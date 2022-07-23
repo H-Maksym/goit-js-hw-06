@@ -11,7 +11,6 @@ textEl.style.fontSize = `${textInputEl.value}px`;
 
 textInputEl.addEventListener("input", onTextSize);
 
-console.log(textInputEl.value);
 function onTextSize(event) {
     textEl.style.fontSize = `${event.currentTarget.value}px`;
 }
