@@ -32,22 +32,31 @@ const textInputEl = document.querySelector("#validation-input");
 
 textInputEl.addEventListener("blur", onTextInputBlur);
 
+function switchCssClass(objEl, addClassCss, removeClassCss) {
+  objEl.classList.add(addClassCss);
+  objEl.classList.remove(removeClassCss);
+}
+
+function deleteCssClass(objEl, ...rest) {
+  objEl.classList.remove(...rest);
+}
+
 function onTextInputBlur(event) {
   //на випадок якщо користувач взагалі нічого не вводив або очистив input.
   if (event.currentTarget.value.length === 0) {
-    event.currentTarget.classList.remove("invalid");
-    event.currentTarget.classList.remove("valid");
+    deleteCssClass(event.currentTarget, "invalid", "valid")
     return;
   }
 
   if (event.currentTarget.value.length === Number(event.currentTarget.dataset.length)) {
-    event.currentTarget.classList.replace("invalid", "valid");
+    switchCssClass(event.currentTarget, "valid", "invalid")
     return;
   }
 
   if (event.currentTarget.value.length !== 0) {
-    event.currentTarget.classList.add("invalid");
-    event.currentTarget.classList.remove("valid");
+    switchCssClass(event.currentTarget, "invalid", "valid")
     return;
   }
 }
+
+
